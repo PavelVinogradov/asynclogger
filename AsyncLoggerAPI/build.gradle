@@ -1,0 +1,5 @@
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Async MQ Logger', 'Implementation-Version': version
+    }
+}

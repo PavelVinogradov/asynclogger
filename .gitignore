@@ -47,3 +47,4 @@
 *.jar
 *.war
 *.ear
+/AsyncLoggerBase/build/

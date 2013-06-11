@@ -1,4 +1,6 @@
 dependencies {
-    compile project(path: ':AsyncLoggerAPI'), project(path: ':AsyncLoggerSample')
+    compile project(path: ':AsyncLoggerAPI'), project(path: ':AsyncLoggerBase')
     runtime project(':AsyncLoggerAPI'), project(':AsyncLoggerSample')
+    runtime group: 'org.perf4j', name: 'perf4j', version: '0.9.16'
+    compile group: 'org.perf4j', name: 'perf4j', version: '0.9.16'
 }

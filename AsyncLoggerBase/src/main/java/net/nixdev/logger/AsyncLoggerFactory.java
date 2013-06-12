@@ -10,7 +10,23 @@ package net.nixdev.logger;
  */
 public class AsyncLoggerFactory {
 
-    public static AsyncLogger getLogger() {
-        return new SampleLogger();
+    public static AsyncLogger getLogger(LoggerType logType, String srcHost, String product) {
+        AsyncLogger logger;
+        
+        switch (logType) {
+            case SYSERR:
+                logger = new SyserrLogger(srcHost, product);
+                break;
+                
+            case LOGBACK:
+                logger = new LogbackLogger(srcHost, product);
+                break;
+                
+            case SYSOUT:
+            default: 
+                logger = new SyserrLogger(srcHost, product);
+        }
+        
+        return logger;
     }
 }

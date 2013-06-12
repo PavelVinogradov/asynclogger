@@ -77,10 +77,14 @@ class LoggerThread implements Runnable {
     
     @Override
     public void run() {
-        StopWatch stopWatch = new Log4JStopWatch(Thread.currentThread().getName());
+        String threadName = Thread.currentThread().getName();
+        String message = getMessage(messageSize);
+        
+        StopWatch stopWatch = new Log4JStopWatch(threadName);
         
         for (int i = 1; i <= messagesCount; i++) {
-            logger.logMessage("[" + Thread.currentThread().getName() +"]: " + getMessage(messageSize) + " " + i);
+            //logger.logMessage("[" + threadName +"]: " + message + " " + i);
+            logger.logMessage(message + " " + i);
         }
         
         stopWatch.stop();
